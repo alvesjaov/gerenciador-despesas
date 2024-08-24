@@ -30,7 +30,7 @@
     margin-top: 1.875rem;
 }
 
-.expense-form {
+#expense-form {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -38,7 +38,7 @@
 }
 
 #expense-name,
-#expense-value,
+#expense-amount,
 #expense-category,
 .add-button {
     width: 48%;
@@ -124,4 +124,40 @@
     font-family: var(--font-Quicksand);
     font-weight: 600;
     font-size: 1rem;
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+#summary {
+    text-align: right;
+    font-weight: bold;
+    color: #333;
+}
+
+#charts {
+    margin-top: 30px;
+}
+
+#category-chart {
+    max-width: 100%;
+    height: 400px; /* Defina uma altura fixa */
+}
+
+#total-expenses {
+    margin-top: 20px;
 }

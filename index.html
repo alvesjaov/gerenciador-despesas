@@ -13,9 +13,9 @@
         <h1 class="title">Gastos Mensais</h1>
         <div class="content">
             <div class="main-content">
-                <form class="expense-form">
+                <form id="expense-form">
                     <input type="text" id="expense-name" placeholder="Nome da Despesa" required>
-                    <input type="number" id="expense-value" placeholder="Valor da Despesa" required>
+                    <input type="number" id="expense-amount" placeholder="Valor da Despesa" required>
                     <select id="expense-category">
                         <option value="Alimentação">Alimentação</option>
                         <option value="Luz">Luz</option>
@@ -31,14 +31,14 @@
                 </form>
 
                 <div class="summary">
-                    <p>Orçamento: <input type="number" id="buget-amount" value="1412" readonly>
+                    <p>Orçamento: <input type="number" id="budget-amount" value="1412" readonly>
                         <button id="edit-budget">Editar</button>
                     </p>
                 </div>
                 <div class="filters">
                     <label for="category-filter">Filtrar por Categoria:</label>
                     <select name="filtro" id="category-filter">
-                        <option value="all">Todas</option>
+                        <option value="Todas">Todas</option>
                         <option value="Alimentação">Alimentação</option>
                         <option value="Luz">Luz</option>
                         <option value="Água">Água</option>
@@ -48,6 +48,7 @@
                         <option value="Transporte">Transporte</option>
                         <option value="Moradia">Moradia</option>
                         <option value="Outros">Outros</option>
+                    </select>
                 </div>
 
                 <table id="expense-table">
@@ -74,7 +75,7 @@
             </div>
         </div>
     </div>
-    <script src="./dist/app.js"></script>
+    <script src="./dist/bundle.js"></script>
 </body>
 
 </html>
