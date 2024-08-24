@@ -13,7 +13,7 @@
         <h1 class="title">Gastos Mensais</h1>
         <div class="content">
             <div class="main-content">
-                <form id="expense-form">
+                <form class="expense-form">
                     <input type="text" id="expense-name" placeholder="Nome da Despesa" required>
                     <input type="number" id="expense-value" placeholder="Valor da Despesa" required>
                     <select id="expense-category">
@@ -27,17 +27,17 @@
                         <option value="Moradia">Moradia</option>
                         <option value="Outros">Outros</option>
                     </select>
-                    <button type="submit">Adicionar Despesa</button>
+                    <button type="submit" class="add-button">Adicionar Despesa</button>
                 </form>
 
-                <div id="summery">
+                <div class="summary">
                     <p>Orçamento: <input type="number" id="buget-amount" value="1412" readonly>
-                        <button id="edit-budget"><img src="src/assets/img/icons8-edit.svg" alt=""></button>
+                        <button id="edit-budget">Editar</button>
                     </p>
                 </div>
-                <div id="filters">
+                <div class="filters">
                     <label for="category-filter">Filtrar por Categoria:</label>
-                    <select id="category-filter">
+                    <select name="filtro" id="category-filter">
                         <option value="all">Todas</option>
                         <option value="Alimentação">Alimentação</option>
                         <option value="Luz">Luz</option>
