@@ -1,17 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root{
-    --primary-color: #f9f9f8;
+:root {
+    --primary-color: #fcfcfc;
     --secondary-color: #333;
+    --grey-color: #969696;
     --black-color: #000;
     --tertiary-color: #37b955;
     --quaternary-color: #00761a;
+    --red-color: #ad0000;
     --font-Quicksand: 'Quicksand', sans-serif;
 }
 
@@ -22,7 +24,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: f9f9f8;
+    background-color: var(--primary-color);
 }
 
 body::-webkit-scrollbar {
@@ -43,4 +45,15 @@ body::-webkit-scrollbar-thumb {
     border: 20px solid transparent;
     /* cria padding em torno do botão de rolagem*/
     height: 4px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
 }
