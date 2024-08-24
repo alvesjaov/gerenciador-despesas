@@ -154,6 +154,8 @@ function updateChart() {
         categoryChart = null; // Garante que o gráfico seja destruído
     }
 
+    const hasData = categoryAmounts.some(amount => amount > 0); // Verifica se há dados para exibir no gráfico
+
     const config: ChartConfiguration<'pie', number[], string> = {
         type: 'pie', // Tipo de gráfico: pizza
         data: {
@@ -163,7 +165,7 @@ function updateChart() {
                 backgroundColor: [
                     '#F0CC1E', '#FFA1AB' , '#FFA07A' , '#98E6FA',
                     '#98FB98', '#C668CB', '#C52831', '#0900A3','#666666'
-                    ] // Cores das fatias do gráfico
+                ] // Cores das fatias do gráfico
             }]
         },
         options: {
@@ -173,6 +175,18 @@ function updateChart() {
                         label: function (context) {
                             const value = Number(context.raw) || 0;
                             return `R$ ${value.toFixed(2)}`; // Formatação dos valores no tooltip
+                        }
+                    }
+                },
+                legend: {
+                    display: hasData, // Define a visibilidade da legenda com base na presença de dados
+                    position: 'right', // Define a posição da legenda
+                    align: 'center', // Alinha a legenda ao centro
+                    labels: {
+                        boxWidth: 10, // Largura dos ícones da legenda
+                        boxHeight: 10, // Altura dos ícones da legenda
+                        font: {
+                            size: 12, // Tamanho da fonte do texto da legenda
                         }
                     }
                 }
