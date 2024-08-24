@@ -83,6 +83,11 @@ function addExpense() {
     updateTable(); // Atualiza a tabela com a nova lista de despesas
     updateSummary(); // Atualiza o resumo de valores (total e restante)
     updateChart(); // Atualiza o gráfico de categorias
+
+    // Limpa os campos de entrada após adicionar a despesa
+    expenseNameInput.value = '';
+    expenseAmountInput.value = '';
+    expenseCategorySelect.value = 'Alimentação';
 }
 
 // Função para gerar um ID único

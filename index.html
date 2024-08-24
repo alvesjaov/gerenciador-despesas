@@ -16,7 +16,7 @@
             <div class="main-content">
                 <form id="expense-form">
                     <input type="text" id="expense-name" placeholder="Nome da Despesa" required>
-                    <input type="number" id="expense-amount" placeholder="Valor da Despesa" required>
+                    <input type="number" id="expense-amount" placeholder="Valor da Despesa" step="0.01" required>
                     <select id="expense-category">
                         <option value="Alimentação">Alimentação</option>
                         <option value="Luz">Luz</option>
@@ -32,7 +32,7 @@
                 </form>
 
                 <div class="summary">
-                    <p>Orçamento: <input type="number" id="budget-amount" value="1412" readonly>
+                    <p>Orçamento -R$ <input type="number" id="budget-amount" value="1412.00" readonly>
                         <button id="edit-budget">Editar</button>
                     </p>
                 </div>
