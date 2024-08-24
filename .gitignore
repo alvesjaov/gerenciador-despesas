@@ -1,0 +1,26 @@
+# Ignorar a pasta dist
+/dist
+
+# Ignorar dependências do Node.js
+/node_modules
+
+# Ignorar arquivos de log
+*.log
+
+# Ignorar arquivos de configuração do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignorar arquivos de build do TypeScript
+*.tsbuildinfo
+
+# Ignorar arquivos de configuração do editor
+.vscode/
+.idea/
+
+# Ignorar arquivos temporários
+*.tmp
+*.swp
+
+# Ignorar arquivos de cache
+.cache/
