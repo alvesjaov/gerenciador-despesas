@@ -26,6 +26,48 @@ const remainingAmountSpan = document.getElementById('remaining-amount') as HTMLS
 const budgetAmountInput = document.getElementById('budget-amount') as HTMLInputElement;
 const categoryChartCanvas = document.getElementById('category-chart') as HTMLCanvasElement;
 
+// Adiciona um listener de evento para o formulário de despesa, que aciona a função addExpense() ao ser submetido
+if (expenseForm) {
+    expenseForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        addExpense();
+    });
+}
+
+// Adiciona um listener de evento para o seletor de filtro de categoria, que aciona a função filterExpenses() ao mudar a seleção
+if (categoryFilterSelect) {
+    categoryFilterSelect.addEventListener('change', () => {
+        filterExpenses();
+    });
+}
+
+// Adiciona um listener de evento para o campo de orçamento, que atualiza o resumo e o gráfico quando o valor é alterado
+if (budgetAmountInput) {
+    budgetAmountInput.addEventListener('input', () => {
+        updateSummary();
+        updateChart();
+    });
+}
+
+// Listener para o botão de edição do orçamento, que permite alternar entre editar e salvar o valor do orçamento
+const editBudgetButton = document.getElementById('edit-budget');
+if (editBudgetButton) {
+    editBudgetButton.addEventListener('click', function () {
+        const budgetInput = document.getElementById('budget-amount') as HTMLInputElement;
+        if (budgetInput) {
+            if (budgetInput.hasAttribute('readonly')) {
+                budgetInput.removeAttribute('readonly');
+                this.textContent = 'Salvar';
+            } else {
+                budgetInput.setAttribute('readonly', 'readonly');
+                this.textContent = 'Editar';
+                updateSummary();
+                updateChart();
+            }
+        }
+    });
+}
+
 // Função para adicionar uma nova despesa à lista e atualizar a tabela, o resumo e o gráfico
 function addExpense() {
     const name = expenseNameInput.value;
@@ -95,7 +137,7 @@ function updateSummary() {
 
 // Função para atualizar o gráfico de categorias com base nas despesas
 function updateChart() {
-    const categories = ['Alimentação', 'Luz', 'Água', 'internet', 'Lazer', 'Saúde', 'Transporte', 'Moradia', 'Outros' ]; // Categorias atualizadas
+    const categories = ['Alimentação', 'Luz', 'Água', 'Internet', 'Lazer', 'Saúde', 'Transporte', 'Moradia', 'Outros' ]; // Categorias atualizadas
     const categoryAmounts = categories.map(category => {
         return expenses.filter(expense => expense.category === category).reduce((sum, expense) => sum + expense.amount, 0);
     }); // Calcula os valores totais para cada categoria
