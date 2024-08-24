@@ -2,6 +2,7 @@ import Chart, { ChartConfiguration } from 'chart.js/auto';
 
 // Interface que define a estrutura de uma despesa
 interface Expense {
+    id: string;       // ID único da despesa
     name: string;     // Nome da despesa
     amount: number;   // Valor da despesa
     category: string; // Categoria da despesa
@@ -73,13 +74,19 @@ function addExpense() {
     const name = expenseNameInput.value;
     const amount = parseFloat(expenseAmountInput.value);
     const category = expenseCategorySelect.value;
+    const id = generateUniqueId(); // Gera um ID único para a despesa
 
-    const expense: Expense = { name, amount, category };
+    const expense: Expense = { id, name, amount, category };
     expenses.push(expense); // Adiciona a nova despesa ao array de despesas
 
     updateTable(); // Atualiza a tabela com a nova lista de despesas
     updateSummary(); // Atualiza o resumo de valores (total e restante)
     updateChart(); // Atualiza o gráfico de categorias
+}
+
+// Função para gerar um ID único
+function generateUniqueId(): string {
+    return '_' + Math.random().toString(36).substr(2, 9);
 }
 
 // Função para filtrar as despesas com base na categoria selecionada e atualizar a tabela
@@ -99,7 +106,7 @@ function updateTable(filteredExpenses: Expense[] = expenses) {
             <td>${expense.name}</td>
             <td>R$ ${expense.amount.toFixed(2)}</td>
             <td>${expense.category}</td>
-            <td><button class="remove-expense" data-name="${expense.name}">Remover</button></td>
+            <td><button class="remove-expense" data-id="${expense.id}">Remover ✗</button></td>
         `;
         expenseTableBody.appendChild(row); // Adiciona a linha à tabela
     });
@@ -109,17 +116,17 @@ function updateTable(filteredExpenses: Expense[] = expenses) {
     removeButtons.forEach(button => {
         button.addEventListener('click', (event) => {
             const target = event.target as HTMLButtonElement;
-            const name = target.getAttribute('data-name');
-            if (name) {
-                removeExpense(name); // Remove a despesa ao clicar no botão "Remover"
+            const id = target.getAttribute('data-id');
+            if (id) {
+                removeExpense(id); // Remove a despesa ao clicar no botão "Remover"
             }
         });
     });
 }
 
-// Função para remover uma despesa com base no nome fornecido
-function removeExpense(name: string) {
-    expenses = expenses.filter(expense => expense.name !== name); // Filtra a despesa para removê-la
+// Função para remover uma despesa com base no ID fornecido
+function removeExpense(id: string) {
+    expenses = expenses.filter(expense => expense.id !== id); // Filtra a despesa para removê-la
     updateTable(); // Atualiza a tabela
     updateSummary(); // Atualiza o resumo de valores
     updateChart(); // Atualiza o gráfico de categorias
