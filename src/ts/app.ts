@@ -26,6 +26,7 @@ const totalAmountSpan = document.getElementById('total-amount') as HTMLSpanEleme
 const remainingAmountSpan = document.getElementById('remaining-amount') as HTMLSpanElement;
 const budgetAmountInput = document.getElementById('budget-amount') as HTMLInputElement;
 const categoryChartCanvas = document.getElementById('category-chart') as HTMLCanvasElement;
+const noDataMessage = document.getElementById('no-data-message');
 
 // Adiciona um listener de evento para o formulário de despesa, que aciona a função addExpense() ao ser submetido
 if (expenseForm) {
@@ -155,6 +156,11 @@ function updateChart() {
     }
 
     const hasData = categoryAmounts.some(amount => amount > 0); // Verifica se há dados para exibir no gráfico
+
+    // Controla a visibilidade da mensagem "Adicione um valor para o gráfico aparecer"
+    if (noDataMessage) {
+        noDataMessage.style.display = hasData ? 'none' : 'block';
+    }
 
     const config: ChartConfiguration<'pie', number[], string> = {
         type: 'pie', // Tipo de gráfico: pizza
