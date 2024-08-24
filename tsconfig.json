@@ -7,7 +7,7 @@
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
         "outDir": "./dist",
-        "moduleResolution": "node" // Adicione esta linha
+        "moduleResolution": "node" 
     },
     "include": ["src", "dist", "webpack.config.js"]
 }
