@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: #f9f9f8;
+    --secondary-color: #333;
+    --black-color: #000;
+    --tertiary-color: #37b955;
+    --quaternary-color: #00761a;
+    --font-Quicksand: 'Quicksand', sans-serif;
+}
+
+
+body {
+    font-family: var(--font-Quicksand);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: f9f9f8;
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+    /* width de toda a barra de rolagem */
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+    /* cor da área de rastreamento */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #8e8e8e;
+    /* cor do botão de rolagem*/
+    border-radius: 20px;
+    /* redondeza do botão de rolagem */
+    border: 20px solid transparent;
+    /* cria padding em torno do botão de rolagem*/
+    height: 4px;
+}
