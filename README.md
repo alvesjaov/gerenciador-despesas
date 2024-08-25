@@ -60,7 +60,7 @@ Aqui estão algumas capturas de tela do projeto:
 
 ![Tela Inicial](/src/assets/img/captura_01.png)
 
-### Tabela de Despesa
+### Tabela de Despesas
 
 - Ao adicionar as despesas a tabela atualiza automaticamente.
 
