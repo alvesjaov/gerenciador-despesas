@@ -60,9 +60,11 @@
     color: var(--secondary-color);
     font-size: 1rem;
     transition: all 0.4s;
+    outline: none;
 }
 
-.summary button:hover {
+.summary button:hover,
+.summary button:focus {
     background-color: var(--quaternary-color);
     color: white;
 }
@@ -103,7 +105,8 @@
     transition: all 0.4s;
 }
 
-.add-button:hover {
+.add-button:hover,
+.add-button:focus {
     background-color: var(--tertiary-color);
     border: 1px solid var(--tertiary-color);
 }
@@ -171,9 +174,11 @@ td {
     color: var(--secondary-color);
     font-size: .8rem;
     transition: all 0.4s;
+    outline: none;
 }
 
-.remove-expense:hover {
+.remove-expense:hover,
+.remove-expense:focus {
     background-color: var(--red-color);
     color: var(--primary-color);
 }
@@ -209,7 +214,12 @@ td {
     }
 
     .title {
+        margin: .8rem 0;
         font-size: 2rem;
+    }
+
+    .summary input {
+        width: 20%;
     }
 
     #expense-form {
@@ -225,10 +235,6 @@ td {
 
     .add-button {
         margin-top: 1rem;
-    }
-
-    .summary input {
-        width: 20%;
     }
 
     #category-filter {
