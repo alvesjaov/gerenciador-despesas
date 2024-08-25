@@ -14,6 +14,11 @@
         <h1 class="title">Gastos Mensais</h1>
         <div class="content">
             <div class="main-content">
+                <div class="summary">
+                    <p>Orçamento - R$ <input type="number" id="budget-amount" value="0.00" readonly>
+                        <button id="edit-budget">Editar</button>
+                    </p>
+                </div>
                 <form id="expense-form">
                     <input type="text" id="expense-name" placeholder="Nome da Despesa" required>
                     <input type="number" id="expense-amount" placeholder="Valor da Despesa" step="0.01" required>
@@ -30,11 +35,6 @@
                     </select>
                     <button type="submit" class="add-button">Adicionar Despesa</button>
                 </form>
-                <div class="summary">
-                    <p>Orçamento - R$ <input type="number" id="budget-amount" value="1412.00" readonly>
-                        <button id="edit-budget">Editar</button>
-                    </p>
-                </div>
                 <div class="filters">
                     <label for="category-filter">Filtrar por Categoria:</label>
                     <select name="filtro" id="category-filter">
