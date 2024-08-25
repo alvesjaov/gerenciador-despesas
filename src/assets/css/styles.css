@@ -25,45 +25,12 @@
     margin-right: 1.25rem;
 }
 
-#expense-form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 1.25rem;
-}
-
-#expense-name,
-#expense-amount,
-#expense-category,
-.add-button {
-    width: 48%;
-    margin-bottom: 10px;
-    padding: .5rem;
-    border: 1px solid var(--grey-color);
-    background-color: var(--primary-color);
-    border-radius: 1rem;
-    outline: none;
-    font-family: var(--font-Quicksand);
-    font-weight: 600;
-    font-size: 1rem;
-}
-
-.add-button {
-    background-color: var(--quaternary-color);
-    color: var(--primary-color);
-    cursor: pointer;
-    transition: all 0.4s;
-}
-
-.add-button:hover {
-    background-color: var(--tertiary-color);
-}
-
 .summary {
     text-align: center;
     font-weight: 600;
     font-size: 1.25rem;
     color: var(--quaternary-color);
+    margin: 2rem 0;
 }
 
 .summary input {
@@ -100,6 +67,47 @@
     color: white;
 }
 
+#expense-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+}
+
+#expense-name,
+#expense-amount,
+#expense-category,
+.add-button {
+    width: 48%;
+    margin-bottom: 10px;
+    padding: .5rem;
+    border: 1px solid var(--grey-color);
+    background-color: var(--primary-color);
+    border-radius: 1rem;
+    outline: none;
+    font-family: var(--font-Quicksand);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+#expense-name:focus,
+#expense-amount:focus,
+#expense-category:focus {
+    border: 1px solid var(--tertiary-color);
+}
+
+.add-button {
+    background-color: var(--quaternary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.add-button:hover {
+    background-color: var(--tertiary-color);
+    border: 1px solid var(--tertiary-color);
+}
+
 .filters {
     margin: .8rem 0;
 }
@@ -120,6 +128,10 @@
     font-family: var(--font-Quicksand);
     font-weight: 600;
     font-size: 1rem;
+}
+
+.filters select:focus {
+    border: 1px solid var(--tertiary-color);
 }
 
 table {
@@ -153,7 +165,7 @@ td {
     border: none;
     padding: 0.4rem 0.8rem;
     border-radius: 1rem;
-    font-family: var (--font-Quicksand);
+    font-family: var(--font-Quicksand);
     font-weight: 600;
     margin-left: 1rem;
     color: var(--secondary-color);
