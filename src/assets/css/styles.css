@@ -30,7 +30,7 @@
     font-weight: 600;
     font-size: 1.25rem;
     color: var(--quaternary-color);
-    margin: 2rem 0;
+    margin:  0 0 2rem 0;
 }
 
 .summary input {
