@@ -1,4 +1,5 @@
 import Chart, { ChartConfiguration } from 'chart.js/auto';
+import '../assets/css/styles.css';
 
 // Interface que define a estrutura de uma despesa
 interface Expense {
