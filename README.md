@@ -58,19 +58,19 @@ Aqui estão algumas capturas de tela do projeto:
 
 - A aplicação começa com os dados vazios.
 
-![Tela Inicial](/src/assets/img/capturade%20tela_01.png)
+![Tela Inicial](/src/assets/img/captura_01.png)
 
 ### Tabela de Despesa
 
 - Ao adicionar as despesas a tabela atualiza automaticamente.
 
-![Adicionar Despesa](/src/assets/img/capturade%20tela_02.png)
+![Adicionar Despesa](/src/assets/img/captura_02.png)
 
 ### Gráfico de Despesas
 
 - O Gráfico tem uma ação dinâmica, onde é possível filtrar por categoria, ocultar categoria especifica e ainda é possível ver o total de cada categoria só passando o mouse por cima do gráfico.
 
-![Gráfico de Despesas](/src/assets/img/capturade%20tela_03.png)
+![Gráfico de Despesas](/src/assets/img/captura_03.png)
 
 ## Melhorias Futuras
 
