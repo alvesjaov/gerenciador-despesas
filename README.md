@@ -67,7 +67,8 @@ Aqui estão algumas capturas de tela do projeto:
 ![Adicionar Despesa](/src/assets/img/capturade%20tela_02.png)
 
 ### Gráfico de Despesas
-- O Gráfico tem uma ação dinâmica, onde é possivel filtarar por categoria, ocultar categoria especifica e ainda é possível ver o total de cada categoria só passando o mouse por cima do gráfico.
+
+- O Gráfico tem uma ação dinâmica, onde é possível filtrar por categoria, ocultar categoria especifica e ainda é possível ver o total de cada categoria só passando o mouse por cima do gráfico.
 
 ![Gráfico de Despesas](/src/assets/img/capturade%20tela_03.png)
 
